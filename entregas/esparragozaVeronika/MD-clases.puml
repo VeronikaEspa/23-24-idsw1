@@ -1,0 +1,54 @@
+@startuml
+class Ludoteca {
+    - monitoras: Monitora[]
+    - niños: Niño[]
+    + Ludoteca(monitoras: Monitora[], niños: Niño[])
+    + recibirNiño(niño: Niño): void
+    + formarFila(): Fila
+    + jugar(): void
+}
+
+class Monitora {
+    - nombre: string
+    - sobrinos: Niño[]
+    + Monitora(nombre: string, sobrinos: Niño[])
+    + recibirNiño(niño: Niño): void
+}
+
+class Niño {
+    - nombre: string
+    - pizarrin: Pizarrin
+    + Niño(nombre: string)
+    + recibirPizarrin(pizarrin: Pizarrin): void
+    + escribirMensaje(): void
+}
+
+class Pizarra {
+    - texto: string
+    + Pizarrin()
+    + limpiar(): void
+    + escribir(texto: string): void
+}
+
+class Fila {
+    - niños: Niño[]
+    + Fila(niños: Niño[])
+    + pasarMensaje(): void
+}
+
+class Juego {
+    - ludoteca: Ludoteca
+    - tiempo: int
+    + Juego(ludoteca: Ludoteca, tiempo: int)
+    + jugar(): void
+}
+
+Ludoteca -- Monitora
+Monitora -- Fila
+Monitora -- Niño
+Niño -- Pizarra
+Fila -- Niño
+Monitora -- Juego
+Monitora -- Pizarra
+Juego -- Fila
+@enduml

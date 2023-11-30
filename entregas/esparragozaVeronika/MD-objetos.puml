@@ -1,0 +1,85 @@
+@startuml
+object Ludoteca {
+    monitoras = Monitora[]
+    niños = Niño[]
+}
+
+object Monitora {
+    nombre = "Lydia"
+    sobrinos = Niño[]
+}
+
+object Monitora2 {
+    nombre = "Aisha"
+    sobrinos = []
+}
+
+object Niño {
+    nombre = "Ana"
+    pizarrin = Pizarra
+}
+
+object Niño2 {
+    nombre = "Carlos"
+    pizarrin = Pizarra2
+}
+
+object Niño3 {
+    nombre = "David"
+    pizarrin = Pizarra3
+}
+
+object Niño4 {
+    nombre = "Elena"
+    pizarrin = Pizarra4
+}
+
+object Niño5 {
+    nombre = "Fernando"
+    pizarrin = Pizarra5
+}
+
+object Fila {
+    niños = Niño[]
+}
+
+object Juego {
+    ludoteca = Ludoteca
+    tiempo = 30
+}
+
+object Pizarra {
+    texto = "Mensaje"
+}
+
+object Pizarra2 {
+    texto = "Mensaje"
+}
+
+object Pizarra3 {
+    texto = "Mensaje"
+}
+
+object Pizarra4 {
+    texto = "Mensaje"
+}
+
+object Pizarra5 {
+    texto = "Mensaje"
+}
+
+Ludoteca -- Monitora
+Ludoteca -- Niño
+Monitora -- Niño
+Monitora2 -- Fila
+Monitora2 -- Niño2
+Monitora2 -- Niño3
+Monitora2 -- Niño4
+Monitora2 -- Niño5
+Niño -- Pizarra
+Niño2 -- Pizarra2
+Niño3 -- Pizarra3
+Niño4 -- Pizarra4
+Niño5 -- Pizarra5
+Ludoteca -- Juego
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+
+actor Lydia
+actor Aisha
+actor Niños
+
+Lydia -> Aisha : Recibir a los niños
+Aisha -> Niños : Formar una fila y dar un pizarrín a cada niño
+
+Aisha -> Aisha : Limpiar la pizarra del salón y pedir a los niños que limpien sus pizarrines
+Aisha -> Aisha : Escribir un texto de 10 letras en un pizarrín y mostrárselo al primer niño de la fila
+Aisha -> Niños : Repetir el mensaje de niño en niño hasta que llega al último niño de la fila
+Niños -> Aisha : Escribir el mensaje en la pizarra del salón
+
+@enduml
